@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
     res.status(200).json('Hello from Backend')
 })
 
-app.get("/auth", authUser, (req, res) => {
+app.get("/userdata", authUser, (req, res) => {
   const userData = {
     userId: req.data.user_id || "",
     username: req.data.username || "cant find user"

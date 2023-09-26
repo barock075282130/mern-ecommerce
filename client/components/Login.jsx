@@ -1,10 +1,12 @@
 'use client';
 
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 const Login = () => {
     const userRef = useRef();
     const passRef = useRef();
+    const router = useRouter();
     const handleLogin = async(e) => {
         e.preventDefault();
         const username = userRef.current.value
@@ -23,6 +25,7 @@ const Login = () => {
             const res = await login.json();
             if(login.ok){
                 localStorage.setItem("token", res.token)
+                router.push('/')
             }
         } catch (error) {
             console.log('login failed')

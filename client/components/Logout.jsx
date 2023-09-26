@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 const Logout = () => {
-    const router = useRouter();
+    const router = useRouter()
     const logout = async() => {
         try {
             const res = await fetch('http://localhost:4000/logout',{
@@ -13,7 +13,7 @@ const Logout = () => {
                 }
             })
             if(res.ok){
-                router.push('/')
+                router.push('/logout')
             }
         } catch (error) {
             console.log(error)
