@@ -25,7 +25,7 @@ const Login = () => {
             const res = await login.json();
             if(login.ok){
                 localStorage.setItem("token", res.token)
-                router.push('/')
+                history.back()
             }
         } catch (error) {
             console.log('login failed')

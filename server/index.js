@@ -10,6 +10,7 @@ const corsOption = {
 const regis = require("./route/register");
 const login = require('./route/login');
 const logout = require('./route/logout');
+const order = require('./route/order')
 const authUser = require('./middleware/auth');
 
 require('dotenv').config();
@@ -21,6 +22,7 @@ app.use(express.json())
 app.use('/register', regis)
 app.use('/login' ,login)
 app.use('/logout', logout)
+app.use('/order', order)
 
 app.get('/',(req,res)=>{
     res.status(200).json('Hello from Backend')

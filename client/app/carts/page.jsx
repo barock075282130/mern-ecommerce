@@ -2,7 +2,9 @@ import Cart from "@components/Cart"
 
 const page = () => {
   return (
-    <Cart />
+    <div className="w-screen">
+      <Cart />
+    </div>
   )
 }
 
