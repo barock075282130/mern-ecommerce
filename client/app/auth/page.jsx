@@ -1,9 +1,9 @@
-import AuthPage from "@components/AuthPage"
+import DetailSkeleton from "@components/skeleton/DetailSkeleton"
 
 const page = () => {
   return (
-    <div>
-      <AuthPage />
+    <div className="flex justify-center mt-36">
+      <DetailSkeleton />
     </div>
   )
 }

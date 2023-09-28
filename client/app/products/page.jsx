@@ -1,8 +1,8 @@
-import AllProducts from "@components/AllProducts"
+import AllProducts from "@components/product/AllProducts"
 
 const page = () => {
   return (
-    <div>
+    <div className="pl-40 pt-16">
         <AllProducts />
     </div>
   )

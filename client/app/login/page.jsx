@@ -1,8 +1,8 @@
-import Login from "@components/Login"
+import Login from "@components/auth/Login"
 
 const page = () => {
   return (
-    <div>
+    <div className="pt-16">
         <Login />
     </div>
   )

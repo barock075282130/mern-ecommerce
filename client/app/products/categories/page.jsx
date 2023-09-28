@@ -1,8 +1,8 @@
-import CategoriesProducts from "@components/CategoriesProducts"
+import CategoriesProducts from "@components/product/CategoriesProducts"
 
 const page = () => {
   return (
-    <div>
+    <div className="pl-40 pt-16">
         <CategoriesProducts />
     </div>
   )

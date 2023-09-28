@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 
 const Main = () => {
   const [ list, setList ] = useState([]);
-  const getImage = async() => {
-    try {
-      const image = await fetch('https://fakestoreapi.com/products/1')
-      const json = await image.json()
-      setList(json)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const getImage = async() => {
+  //   try {
+  //     const image = await fetch('https://fakestoreapi.com/products/1')
+  //     const json = await image.json()
+  //     setList(json)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   // useEffect(()=>{
   //   getImage()
   // },[])

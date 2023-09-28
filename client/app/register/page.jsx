@@ -1,8 +1,8 @@
-import RegisterForm from '@/components/RegisterForm'
+import RegisterForm from '@components/auth/RegisterForm'
 
 const page = () => {
   return (
-    <div>
+    <div className="pt-16">
         <RegisterForm />
     </div>
   )

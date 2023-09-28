@@ -1,8 +1,8 @@
-import ProductDetail from "@components/ProductDetail"
+import ProductDetail from "@components/product/ProductDetail"
 
 const page = () => {
   return (
-    <div>
+    <div className="w-screen">
         <ProductDetail />
     </div>
   )

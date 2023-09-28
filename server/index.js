@@ -30,10 +30,10 @@ app.get('/',(req,res)=>{
 
 app.get("/userdata", authUser, (req, res) => {
   const userData = {
-    userId: req.data.user_id || "",
-    username: req.data.username || "cant find user"
+    userId: req.data.user_id,
+    username: req.data.username
   }
-  res.status(200).json(userData);
+  res.status(200).json(userData)
 });
 
 app.listen(PORT, ()=>{ 
