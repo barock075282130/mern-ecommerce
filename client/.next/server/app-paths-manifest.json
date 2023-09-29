@@ -1,7 +1,7 @@
 {
+  "/page": "app/page.js",
   "/carts/page": "app/carts/page.js",
   "/login/page": "app/login/page.js",
-  "/logout/page": "app/logout/page.js",
   "/products/page": "app/products/page.js",
-  "/products/details/page": "app/products/details/page.js"
+  "/products/categories/page": "app/products/categories/page.js"
 }

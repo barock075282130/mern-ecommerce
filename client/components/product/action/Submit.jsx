@@ -1,13 +1,15 @@
+import { UserContext } from "@components/auth/Context";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
 const Submit = ({ 
     info,
     total, 
     clear,
 }) => {
+    const { user, getUser } = useContext(UserContext)
     const router = useRouter();
     const submitOrder = async(userId) => {
-        console.log(userId)
         if(!userId){
             router.push('/login')
         }
@@ -33,32 +35,24 @@ const Submit = ({
             
         }
     }
-    const getUser = async() => {
-        try {
-            const res = await fetch('http://localhost:4000/userdata',{
-                method: "GET",
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem("token")
-                }
-            })
-            if(res.status !== 200){
-                router.push('/login')
-            }else{
-                const json = await res.json()
-                const userId = await json.userId
-                submitOrder(userId)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
   return (
-        <button 
-            onClick={()=>getUser()} 
-            className="bg-green-200 px-6 rounded-lg py-1 hover:bg-green-600 hover:text-white duration-300"
-        >
-            Submit
-        </button>
+        <>
+            {!user.auth ? (
+                <button 
+                    onClick={()=>getUser()} 
+                    className="bg-green-200 px-6 rounded-lg py-1 hover:bg-green-600 hover:text-white duration-300"
+                >
+                    Submit
+                </button>    
+            ):(
+                <button 
+                    onClick={()=>submitOrder(user.userId)} 
+                    className="bg-green-200 px-6 rounded-lg py-1 hover:bg-green-600 hover:text-white duration-300"
+                >
+                    Submit
+                </button>
+            )}
+        </>
     )
   }
 
